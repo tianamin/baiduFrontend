@@ -1,0 +1,135 @@
+body{
+	background-color: #cbc9c9;
+	margin: 0px;
+	/*font-size: small;*/
+	/*font-size: medium;*/
+	font-size: 12px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border-left: 20px solid black;
+	border-right: 20px solid black;
+
+}
+.content{
+	margin:10px 410px 10px 10px;
+	border: 1px solid black;
+	background-color: white;
+	padding: 10px;
+}
+/*headder*/
+#header{
+	background-color: black;
+	color: white;
+	height: 50px;
+	/*/text-align: left;*/
+	margin:  0;
+	padding: 0;
+}
+#header img{
+       float: left;
+       margin:auto 22px;
+}
+#header nav{
+	float: right;
+	margin-right: 30px;
+}
+
+#header nav a{
+
+	float: left;
+	line-height: 50px;
+	padding-left: 15px;
+	
+	text-decoration: none;
+	color: white;
+}
+#header nav a:hover{
+	color: #38B3FD;
+}
+
+
+#footer{
+	background-color: black;
+	color: white;
+	margin: 0px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+/*sidebar*/
+.sidebar{
+    margin:10px;
+	border: 1px solid black;
+	background-color: white;
+	padding: 10px;
+	float: right;
+	width: 370px;
+}
+form {
+	display: table;
+	/*padding: 10px;*/
+	margin: 0px auto;
+}
+div.tableRow{
+	display: table-row;
+}
+div.tableRow p{
+	display: table-cell;
+	vertical-align: top;
+	padding: 3px;
+}
+div.tableRow p:first-child {
+	text-align: right;
+}
+
+.submit{
+	background-color: blue;
+	width: 90%;
+	height: 40px;
+	display: inline-block;
+	color: white;
+	border-radius:10px;
+	margin: 20px 20px 20px 20px;
+}
+div.sub{
+	text-align: center;
+}
+
+
+/*picture*/
+
+section.content .picture{
+  display: inline-block;
+  border:1px solid black;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+
+/*article*/
+article p{
+	text-indent: 2em;
+}
+
+table{
+	margin:0px 20px 20px 20px;
+	border-collapse:collapse;
+	width: 94%;
+}
+table th{
+	background-color: black;
+	color: white;
+}
+tr,th,td{
+ text-align: left;
+}
+#sum{
+	background-color: gray;
+}
+
+
+
+
