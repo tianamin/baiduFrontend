@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+	padding: 0;
+}
+.box{
+	width: 400px;
+	height: 200px;
+	background-color: #ccc;
+	left: 50%;
+	top: 50%;
+	transform: translate(-200px,-100px);
+	position: absolute;
+	overflow: hidden;
+	
+}
+
+.box1,.box2{
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+	background-color: #fc0;
+}
+.box1{
+	position: absolute;
+	top: -50px;
+	left: -50px;
+
+}
+.box2{
+	position: absolute;
+	bottom: -50px;
+	right: -50px;
+}
