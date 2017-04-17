@@ -1,0 +1,17 @@
+thead{
+	background-color: #000000;
+	color: #fff;
+	text-align: left;
+}
+thead th{
+	padding: 1px;
+	border-right: 1px solid #fff;
+}
+
+.red{
+	background-color: #ffffff;
+	color: #ff0000;
+}
+.second:focus{
+   border: 1px solid #0000ff;
+}
