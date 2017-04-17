@@ -1,0 +1,111 @@
+body{
+	margin: 0 ;
+	padding: 0;
+}
+.contain{
+	margin: 0 auto;
+	width: 1286px;
+	text-align: center;
+}
+
+.contain table{
+	background-color: #fff;
+	color: #000;
+	text-align: left;
+	margin: 0 auto;
+	margin-bottom: 20px;
+
+}
+.contain table tr:nth-of-type(2n+1){
+	background-color: #ccc;
+}
+
+.contain table tr:first-child{
+	background-color: #000;
+	color: #fff; 
+}
+ .contain table tr:nth-child(-n+4) {
+        color: red;
+}
+.contain table tr:first-child{
+	background-color: #000;
+	color: #fff; 
+}
+.contain input{
+	width: 200px;
+	transition: width 0.5s ease-in;
+	margin-bottom: 20px;
+}
+.contain input:focus{
+	width:300px;
+    border: 1px solid #0000ff;
+}
+.banner{
+	width: 300px;
+	height: 150px;
+	padding: 0;
+    margin:0 auto; 
+    position: relative;
+}
+ul{
+      width: 300px;
+      height: 150px;
+      position: relative;    
+}
+	
+li{
+	width: 300px;
+	height: 150px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	 overflow: hidden;
+	 list-style: none;
+}
+
+li:target {
+	-webkit-animation: myfirst 1s;
+-o-animation: myfirst 1s;
+    animation: myfirst 0.5s forwards;
+    z-index: 9;
+
+}
+
+#i1 {
+    background-color:red;
+}
+
+#i2 {
+    background-color:green;
+}
+
+#i3 {
+    background-color: blue;
+}
+@keyframes myfirst {
+    from {
+        left: 300px;  
+    }
+    to {
+        left: 0;
+ 
+    }
+}
+
+
+.btns{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	z-index:10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btns a{
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	margin: 0px 1px;
+}
