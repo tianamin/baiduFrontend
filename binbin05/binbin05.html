@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04</title>
+  <style>
+    li{
+      background-color: red;
+      display:inline-block;
+      padding: 2px;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body>
+        <!--  此时不应该加入表单元素form，会出错  -->
+       <input type="number" id="aqi_input" max="100" min="20" step="1">
+       <button id="left_in">左侧入</button>
+       <button id="right_in">右侧入</button>
+       <button id="left_out">左侧出</button>
+       <button  id="right_out">右侧出</button>
+  
+  <ul id="aqi_output">
+    <li>10</li>
+    <li>10</li>
+    <li>10</li>
+  </ul>
+  <script type="text/javascript">
+     var left_in_btn=document.getElementById("left_in");
+     var left_out_btn=document.getElementById("left_out");
+     var right_out_btn=document.getElementById("right_out");
+     var right_in_btn=document.getElementById("right_in");
+
+     var input=document.getElementById("aqi_input");
+     var output=document.getElementById("aqi_output");
+
+        left_in_btn.onclick=function(){
+           
+           var newnode=document.createElement("li");
+           newnode.innerHTML=input.value;
+           output.insertBefore(newnode,output.childNodes[0]);
+           if (output.childNodes.length>=60) {
+            alert("最大，不能再输入");
+           }
+           
+     }
+     right_in_btn.onclick=function(){
+           
+           var newnode=document.createElement("li");
+           newnode.innerHTML=input.value;
+           output.appendChild(newnode);
+     }
+     left_out_btn.onclick=function(){
+           
+           var newnode=document.createElement("li");
+           output.removeChild(output.firstChild);
+
+
+     }
+     right_out_btn.onclick=function(){
+  
+           var newnode=document.createElement("li");
+           output.removeChild(output.lastChild);
+     }
+  </script>
+</body>
+</html>
