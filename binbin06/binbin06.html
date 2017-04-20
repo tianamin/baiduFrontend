@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04</title>
+  <style>
+    li{
+      background-color: red;
+      display:inline-block;
+      padding: 2px;
+      margin: 3px;
+    }
+  </style>
+</head>
+<body>
+        <!--  此时不应该加入表单元素form，会出错  -->
+       <textarea type="text" id="aqi_input"></textarea> 
+       <br>
+       <input type="text" id="check">
+       <button id="botton">查询</button>
+   
+           
+  <script type="text/javascript">
+     var check=document.getElementById('check');
+     var txt=document.getElementById('aqi_input');
+     var btn=document.getElementById("botton");
+     btn.onclick=function(){
+        var pat="["+check.innerHTML+"]"+"g";
+        var arr=txt.innerHTML.match(pat);
+        for (var i = 0; i < arr.length; i++) {
+          arr[i].style.cssText=="color:red";
+        }
+
+     }
+
+   
+  </script>
+</body>
+</html>
