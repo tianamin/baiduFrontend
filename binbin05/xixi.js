@@ -1,0 +1,169 @@
+ 
+  
+   var left_in_btn=document.getElementById("left_in");
+     var left_out_btn=document.getElementById("left_out");
+     var right_out_btn=document.getElementById("right_out");
+     var right_in_btn=document.getElementById("right_in");
+     var bubble=document.getElementById("bubble");
+     var sub=document.getElementById("random");
+
+     var input=document.getElementById("aqi_input");
+     var queue=document.getElementById("aqi_output");
+     var arr=[];
+    
+    var time;
+
+   
+
+        left_in_btn.onclick=function(){
+
+             
+          if (parseInt(input.value)>=10 && parseInt(input.value)<=100  && input.value){
+                        if (queue.childNodes.length<=60) {
+                             var newnode=document.createElement("li");
+                               queue.insertBefore(newnode,queue.childNodes[0]);
+                               newnode.innerHTML=input.value;
+                               newnode.style.height=input.value+"px";
+                        }
+                        else{
+                          alert("超出范围！");
+                        }
+
+           }
+           else{
+            alert("please enter 10-100 number!");
+           }
+           
+        };
+ 
+      
+        right_in_btn.onclick=function(){
+            if (parseInt(input.value)>=10 && parseInt(input.value)<=100  && input.value){
+                       
+                       if (queue.childNodes.length<=60) {
+                        	   var newnode=document.createElement("li");
+                               newnode.innerHTML=input.value;
+                               queue.appendChild(newnode);
+                               
+                               newnode.style.height=input.value+"px";
+                        }
+                        else{
+                        	alert("超出范围！");
+                        }
+        	 }
+        	 else{
+        	 	alert("please enter 10-100 number!");
+        	 }
+    
+     };
+     left_out_btn.onclick=function(){
+           
+           var newnode=document.createElement("li");
+           queue.removeChild(queue.firstChild);
+
+
+     };
+     right_out_btn.onclick=function(){
+  
+           var newnode=document.createElement("li");
+           queue.removeChild(queue.lastChild);
+     };
+
+     bubble.onclick=function(){
+
+        time = setInterval(printing, 100);
+
+     };
+
+   
+    function printing(){
+
+    var show=queue.getElementsByTagName('li');
+    var i=0,j=0; 
+    for (var m = 0; m < show.length; m++) {
+          arr[m]=parseInt(show[m].innerHTML);
+          }
+
+          for (i=0;i < arr.length;i++)  
+           for (j=0;j < arr.length - i;j++) {  
+              if (arr[j] > arr[j + 1]) {  
+                  var temp = arr[j];  
+                  arr[j] = arr[j + 1];  
+                  arr[j + 1] = temp;  
+                  queue.innerHTML = "";  
+                  for (var k = 0; k < arr.length; k++) {  
+                      var textNode = document.createTextNode(arr[k]);  
+                      var liElement = document.createElement("li");  
+                      liElement.appendChild(textNode);  
+                        
+                      liElement.style.height = arr[k] + "px";  
+                       
+                      queue.appendChild(liElement);  
+                  }  
+              }        
+      }  
+      clearInterval(time);   
+      return;  
+ }  
+
+ sub.onclick=function(){   
+    var numbers = random();   
+    var i = 0, j = 0;  
+    var time = setInterval(function() {  
+        if (i < numbers.length) {  
+            if (j < numbers.length - i) {  
+                if (numbers[j] > numbers[j + 1]) {  
+                    var temp = numbers[j];  
+                    numbers[j] = numbers[j + 1];  
+                    numbers[j + 1] = temp;  
+                    queue.innerHTML = "";  
+                    for (var k = 0; k < numbers.length; k++) {  
+                        var textNode = document.createTextNode(numbers[k]);  
+                        var divElement = document.createElement("li");  
+                        divElement.appendChild(textNode);  
+                        // divElement.style.left = k * 20 + k * 2 + "px";  
+                        // divElement.style.top = 300 - 3 * numbers[k] + "px";  
+                        divElement.style.height = numbers[k] + "px";  
+                        // divElement.setAttribute("class","box");  
+                        queue.appendChild(divElement);  
+                    }  
+                }  
+                j++;  
+            }  
+            else{  
+                i++;  
+                j = 0;  
+            }  
+        }  
+        else {  
+            clearInterval(time);   
+            return;  
+        }  
+    }, 100);    
+} ; 
+
+
+      
+       
+   function random(){  
+        var numbers = [];  
+        for (var i = 0; i < 60; i++) {  
+        var number = Math.floor(Math.random() * 90 + 10);  
+        numbers.push(number);  
+        var divElement = document.createElement("li");  
+        var parentElement = document.getElementById("aqi_output");  
+
+        divElement.style.height = number + "px";  
+        parentElement.appendChild(divElement);  
+        } 
+        numbers.unshift(100); 
+        return numbers;  
+        }  
+          
+        
+         
+
+
+
+
+
