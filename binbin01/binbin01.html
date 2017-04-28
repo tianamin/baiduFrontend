@@ -22,8 +22,8 @@
   */
   var btn=document.getElementById("button")
   btn.onclick=function(){
- var a=document.getElementById("aqi-input").value;
-  document.getElementById("aqi-display").innerHTML=a;
+     var input=document.getElementById("aqi-input").value;   //使用innerHTML会出现错误
+     document.getElementById("aqi-display").innerHTML=input;
   }
 })();
 
