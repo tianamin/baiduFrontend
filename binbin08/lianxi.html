@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+xiixi
+<script type="text/javascript">
+    
+   // function displayInfo(args){
+   // 	var output="";
+   // 	if (typeof args.name=="string") {
+   // 		output+="Name:"+args.name+'\n';
+   // 	}
+   // 	if (typeof args.age=="number") {
+   // 		output+="age:"+args.age+'\n';
+   // 	}
+   // 	alert(output);
+   // }
+   // displayInfo({name:"tian",age:27});
+   // displayInfo({name:"chen"});
+
+// var colors=['red','blue','yellow'];
+// alert(colors.toString());
+// alert(colors.valueOf());
+// alert(colors);
+// alert(colors.join("||"));
+var values=[0,1,5,10,15];
+// values.sort(compare);
+// alert(values);
+// function compare(value1,value2){
+// 	return  value1-value2;
+	
+
+var everyeb=values.every(function(item,index,array){return item>2;});
+
+function outer(){
+	inner();
+}
+function inner(){
+	alert(inner.caller);
+}
+outer();
+
+</script>
+
+</body>
+</html>
