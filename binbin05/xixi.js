@@ -1,4 +1,4 @@
- 
+  
   
    var left_in_btn=document.getElementById("left_in");
      var left_out_btn=document.getElementById("left_out");
@@ -9,7 +9,7 @@
 
      var input=document.getElementById("aqi_input");
      var queue=document.getElementById("aqi_output");
-     var arr=[];
+     var numbers=[];
     
     var time;
 
@@ -58,53 +58,59 @@
      };
      left_out_btn.onclick=function(){
            
-           var newnode=document.createElement("li");
+          // var newnode=document.createElement("li");
            queue.removeChild(queue.firstChild);
 
 
      };
      right_out_btn.onclick=function(){
   
-           var newnode=document.createElement("li");
+          // var newnode=document.createElement("li");
            queue.removeChild(queue.lastChild);
      };
 
      bubble.onclick=function(){
+        var show=queue.getElementsByTagName('li');
+        var i=0,j=0; 
+         for (var m = 0; m < show.length; m++) {
+          numbers[m]=parseInt(show[m].innerHTML);
+         } 
+       time = setInterval(function() {  
+        if (i < numbers.length) {  
+            if (j < numbers.length - i) {  
+                if (numbers[j] > numbers[j + 1]) {  
+                    var temp = numbers[j];  
+                    numbers[j] = numbers[j + 1];  
+                    numbers[j + 1] = temp;  
+                    queue.innerHTML = "";  
+                    for (var k = 0; k < numbers.length; k++) {  
+                        var textNode = document.createTextNode(numbers[k]);  
+                        var divElement = document.createElement("li");  
+                        divElement.appendChild(textNode);  
+                         
+                        divElement.style.height = numbers[k] + "px";  
+                 
+                        queue.appendChild(divElement);  
+                    }  
+                }  
+                j++;  
+            }  
+            else{  
+                i++;  
+                j = 0;  
+            }  
+        }  
+        else {  
+            clearInterval(time);   
+            return;  
+        }  
+    }, 100);  
+        
+   };
 
-        time = setInterval(printing, 100);
-
-     };
+  
 
    
-    function printing(){
-
-    var show=queue.getElementsByTagName('li');
-    var i=0,j=0; 
-    for (var m = 0; m < show.length; m++) {
-          arr[m]=parseInt(show[m].innerHTML);
-          }
-
-          for (i=0;i < arr.length;i++)  
-           for (j=0;j < arr.length - i;j++) {  
-              if (arr[j] > arr[j + 1]) {  
-                  var temp = arr[j];  
-                  arr[j] = arr[j + 1];  
-                  arr[j + 1] = temp;  
-                  queue.innerHTML = "";  
-                  for (var k = 0; k < arr.length; k++) {  
-                      var textNode = document.createTextNode(arr[k]);  
-                      var liElement = document.createElement("li");  
-                      liElement.appendChild(textNode);  
-                        
-                      liElement.style.height = arr[k] + "px";  
-                       
-                      queue.appendChild(liElement);  
-                  }  
-              }        
-      }  
-      clearInterval(time);   
-      return;  
- }  
 
  sub.onclick=function(){   
     var numbers = random();   
@@ -121,10 +127,9 @@
                         var textNode = document.createTextNode(numbers[k]);  
                         var divElement = document.createElement("li");  
                         divElement.appendChild(textNode);  
-                        // divElement.style.left = k * 20 + k * 2 + "px";  
-                        // divElement.style.top = 300 - 3 * numbers[k] + "px";  
+                         
                         divElement.style.height = numbers[k] + "px";  
-                        // divElement.setAttribute("class","box");  
+                 
                         queue.appendChild(divElement);  
                     }  
                 }  
@@ -160,6 +165,21 @@
         return numbers;  
         }  
           
+        
+         
+
+
+
+
+
+
+  
+   
+
+
+      
+       
+  
         
          
 
